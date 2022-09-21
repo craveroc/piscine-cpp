@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 08:29:57 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/21 09:26:54 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/21 12:51:08 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,19 @@
 void Contact::insertinfo()
 {
 	std::cout << "first name :";
-	std::cin >> firstname;
+	getline(std::cin,firstname);
+	/*if (std::cin.eof()) return;
 	std::cout << "last name :";
-	std::cin >> lastname;
+	getline(std::cin,lastname);
+	if (std::cin.eof()) return;
 	std::cout << "nickname :";
-	std::cin >> nickname;
+	getline(std::cin,nickname);
+	if (std::cin.eof()) return;
 	std::cout << "phone number :";
-	std::cin >> number;
+	getline(std::cin,number);
+	if (std::cin.eof()) return;
 	std::cout << "darkest secret :";
-	std::cin >> secret;
+	getline(std::cin,secret);*/
 }
 
 	
@@ -45,7 +49,7 @@ void Contact::printinfo()
 void Contact::printshortinfo(int i)
 {
 	std::cout<<i<<"         |"<<convertshort(firstname)<<"|"<<convertshort(lastname)<<"|";
-	std::cout<<convertshort(firstname)<<std::endl;
+	std::cout<<convertshort(nickname)<<std::endl;
 }
 
 std::string Contact::convertshort(std::string str)
