@@ -1,4 +1,4 @@
-SRCS	= megaphone.cpp
+SRCS	= main.cpp Contact.cpp PhoneBook.cpp
 
 DIR_SRC = sources/
 
@@ -12,7 +12,7 @@ DEP	= ${SRCS:.cpp=.d}
 
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 
-NAME	= megaphone
+NAME	= Phone
 
 CC	= c++
 
