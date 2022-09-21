@@ -1,4 +1,4 @@
-SRCS	= main.cpp Contact.cpp PhoneBook.cpp
+SRCS	= tests.cpp Account.cpp
 
 DIR_SRC = sources/
 
@@ -12,11 +12,11 @@ DEP	= ${SRCS:.cpp=.d}
 
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 
-NAME	= Phone
+NAME	= ex02
 
 CC	= c++
 
-CFLAGS	= -MMD -Wall -Wextra -Werror -g -std=c++98
+CFLAGS	= -MMD -Wall -Wextra -g -std=c++98
 
 $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)

@@ -1,4 +1,4 @@
-SRCS	= main.cpp Contact.cpp PhoneBook.cpp
+SRCS	= Contact.cpp main.cpp PhoneBook.cpp
 
 DIR_SRC = sources/
 
