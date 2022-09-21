@@ -16,7 +16,7 @@ NAME	= megaphone
 
 CC	= c++
 
-CFLAGS	= -MMD -Wall -Wextra -Werror -g - std=c++98
+CFLAGS	= -MMD -Wall -Wextra -Werror -g -std=c++98
 
 $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
