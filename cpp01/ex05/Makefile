@@ -1,4 +1,4 @@
-SRCS	= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS	= main.cpp Harl.cpp
 
 DIR_SRC = sources/
 

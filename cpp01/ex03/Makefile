@@ -1,4 +1,4 @@
-SRCS	= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS	= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 DIR_SRC = sources/
 
