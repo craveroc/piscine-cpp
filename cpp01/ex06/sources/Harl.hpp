@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: molich <molich@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 14:39:25 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/23 08:40:48 by molich           ###   ########.fr       */
+/*   Created: 2022/09/22 14:17:41 by ccravero          #+#    #+#             */
+/*   Updated: 2022/09/22 15:08:02 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
+
 #include <iostream>
 
-int main()
+class Harl
 {
-    Harl test;
+	private:
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
+	public:
+		void complain(std::string level);
+		
+};
 
-    test.complain("DBUG");
-    test.complain("Error");
-    test.complain("ERROR");
-}
+#endif

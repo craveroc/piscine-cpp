@@ -1,4 +1,4 @@
-SRCS	= main.cpp Harl.cpp
+SRCS	= main.cpp Fixed.cpp
 
 DIR_SRC = sources/
 
@@ -12,7 +12,7 @@ DEP	= ${SRCS:.cpp=.d}
 
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 
-NAME	= HarlFilter
+NAME	= fixed
 
 CC	= c++
 
