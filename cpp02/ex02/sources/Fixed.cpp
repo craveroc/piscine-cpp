@@ -6,7 +6,7 @@
 /*   By: molich <molich@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:01:37 by molich            #+#    #+#             */
-/*   Updated: 2022/09/23 19:25:07 by molich           ###   ########.fr       */
+/*   Updated: 2022/09/25 14:10:03 by molich           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,13 @@ std::ostream &operator<<(std::ostream &out, const Fixed &nbr)
 {
     out<<nbr.toFloat();
     return out;
+}
+
+Fixed Fixed::operator+(const Fixed b) const
+{
+    Fixed res;
+
+    res.val = b.val + val;
+
+    return res;
 }

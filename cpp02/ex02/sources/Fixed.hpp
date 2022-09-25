@@ -6,7 +6,7 @@
 /*   By: molich <molich@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:01:30 by molich            #+#    #+#             */
-/*   Updated: 2022/09/23 15:11:39 by molich           ###   ########.fr       */
+/*   Updated: 2022/09/25 14:10:00 by molich           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,20 @@ class Fixed
         int getRawBits( void ) const;
         void setRawBits( int const raw );
         float toFloat( void ) const;
-         int toInt( void ) const;
+        int toInt( void ) const;
+
+        Fixed operator+(const Fixed b); const
+        Fixed operator-(const Fixed &b);
+        Fixed operator*(const Fixed &b);
+        Fixed operator/(const Fixed &b);
+		
+		bool operator==(const Fixed &b);
+		bool operator!=( const Fixed &b);
+		bool operator<=(const Fixed &b);
+		bool operator<(const Fixed &b);
+		bool operator>(const Fixed &b);
+		bool operator>=(const Fixed &b);
+
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &nbr);

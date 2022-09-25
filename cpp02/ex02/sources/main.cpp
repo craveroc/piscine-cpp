@@ -6,7 +6,7 @@
 /*   By: molich <molich@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/23 15:12:47 by molich           ###   ########.fr       */
+/*   Updated: 2022/09/25 14:01:59 by molich           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ int main()
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
     std::cout << "c is " << c.toInt() << " as integer" << std::endl;
     std::cout << "d is " << d.toInt() << " as integer" << std::endl; 
-//
-   // int a = 2;
 
- //   printf("float %f\nroundf%d\n",42.42f, ((int)(42.42f * pow(2, 8)))>>8);
-    
+	b = c + a;
+	
+    std::cout << "b is " << b << std::endl;
 
  }
