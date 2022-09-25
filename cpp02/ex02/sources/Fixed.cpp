@@ -6,7 +6,7 @@
 /*   By: molich <molich@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:01:37 by molich            #+#    #+#             */
-/*   Updated: 2022/09/25 14:10:03 by molich           ###   ########.fr       */
+/*   Updated: 2022/09/25 14:25:36 by molich           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ Fixed::~Fixed()
      std::cout<<"destructeur called \n";
 }
 
-Fixed &Fixed::operator=(const Fixed &tocpy)
+Fixed &Fixed::operator=(const Fixed &cpy)const;
 {
      std::cout<<"operateur de copie \n";
-    val=tocpy.getRawBits();
+    =tocpy.getRawBits();
     return *this;
 }
 
@@ -79,7 +79,7 @@ std::ostream &operator<<(std::ostream &out, const Fixed &nbr)
     return out;
 }
 
-Fixed Fixed::operator+(const Fixed b) const
+Fixed Fixed::operator+(const &Fixed b) const
 {
     Fixed res;
 
