@@ -1,33 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/26 14:20:44 by ccravero         ###   ########.fr       */
+/*   Created: 2022/09/26 14:02:17 by ccravero          #+#    #+#             */
+/*   Updated: 2022/09/26 15:14:16 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
-#include <stdio.h>
-#include <cmath>
+#include "Point.hpp"
 
-int main()
+Point::Point() : x(0),y(0)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+}
+Point::Point(const float ax, const float ay) : x(ax), y(ay)
+{
+}
 
- }
+Point::Point(const Point &tocpy) : x(tocpy.getx()), y(tocpy.gety())
+{
+	
+}
+
+Point::~Point()
+{
+	
+}
+
+//Point &Point::operator=(const Point &cpy) 
+//{
+//	return ()	
+//}
+
+Fixed Point::getx() const
+{
+	return x;
+}
+
+Fixed Point::gety() const
+{
+	return y;
+}

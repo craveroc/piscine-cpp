@@ -1,4 +1,4 @@
-SRCS	= main.cpp Fixed.cpp
+SRCS	= main.cpp Fixed.cpp Point.cpp BSP.cpp
 
 DIR_SRC = sources/
 
@@ -19,7 +19,6 @@ CC	= c++
 CFLAGS	= -MMD -Wall -Wextra -Werror -g -std=c++98
 
 $(NAME):	$(OBJS)
-			echo "test"
 			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 all:	${NAME}

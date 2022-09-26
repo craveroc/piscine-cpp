@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/26 14:20:44 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:08:54 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 #include <iostream>
 #include <stdio.h>
 #include <cmath>
+#include "Point.hpp"
+
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
+
 
 int main()
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+	Point a(0,10);
+	Point b(10,0);
+	Point c(0,0);
+	Point point(4, 1);
+	std::cout<<bsp(a, b, c, point)<<std::endl;
 
- }
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: molich <molich@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:01:37 by molich            #+#    #+#             */
-/*   Updated: 2022/09/25 13:53:30 by molich           ###   ########.fr       */
+/*   Updated: 2022/09/26 10:00:10 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ Fixed::~Fixed()
 
 Fixed &Fixed::operator=(const Fixed &tocpy)
 {
-     std::cout<<"operateur de copie \n";
-    val=tocpy.getRawBits();
+    std::cout<<"operateur de copie \n";
+    val = tocpy.getRawBits();
     return *this;
 }
 

@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/26 14:20:44 by ccravero         ###   ########.fr       */
+/*   Created: 2022/09/26 14:02:14 by ccravero          #+#    #+#             */
+/*   Updated: 2022/09/26 15:14:27 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
 #include <iostream>
-#include <stdio.h>
-#include <cmath>
+#include "Fixed.hpp"
 
-int main()
+class Point
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-
- }
+	private:
+		const Fixed x;
+		const Fixed y;
+		
+	public:
+		Point();
+		Point(const float ax, const float ay);
+		Point(const Point &tocpy);
+		~Point();
+		Point &operator=(const Point &cpy);
+		
+		Fixed getx() const;
+		Fixed gety() const;
+};

@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:01:37 by molich            #+#    #+#             */
-/*   Updated: 2022/09/26 16:45:00 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/26 16:44:39 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,19 +169,4 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 	if (a > b)
 		return a;
 	return b;
-}
-
-Fixed Fixed::operator--()
-{
-	Fixed tmp;
-	tmp.val = --val;
-	return tmp;	
-}
-
-Fixed Fixed::operator--(int a)
-{
-	(void)a;
-	Fixed tmp;
-	tmp.val = val--;
-	return tmp;
 }
