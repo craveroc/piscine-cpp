@@ -1,4 +1,4 @@
-SRCS	= main.cpp Fixed.cpp
+SRCS	= main.cpp ClapTrap.cpp
 
 DIR_SRC = sources/
 
@@ -12,7 +12,7 @@ DEP	= ${SRCS:.cpp=.d}
 
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 
-NAME	= fixed
+NAME	= clap
 
 CC	= c++
 
