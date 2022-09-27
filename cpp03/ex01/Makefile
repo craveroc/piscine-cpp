@@ -1,4 +1,4 @@
-SRCS	= main.cpp ClapTrap.cpp
+SRCS	= main.cpp ClapTrap.cpp ScavTrap.cpp
 
 DIR_SRC = sources/
 

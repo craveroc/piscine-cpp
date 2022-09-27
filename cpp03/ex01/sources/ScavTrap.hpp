@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Scavtrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
+/*   By: molich <molich@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:07:00 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/26 19:12:07 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/27 06:44:48 by molich           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : private ClapTrap
+class ScavTrap : public ClapTrap
 {
 	private :
-	    ScavTrap();
+	   
+
+	public :
+		ScavTrap();
 		ScavTrap(std::string nname);
         ScavTrap(const ScavTrap &tocpy);
         ~ScavTrap();
-        //ScavTrap &operator=(const ScavTrap &tocpy);
+        ScavTrap &operator=(const ScavTrap &tocpy);
 
-	public :
-
-}
+		void guardGate();
+};
 
 
 

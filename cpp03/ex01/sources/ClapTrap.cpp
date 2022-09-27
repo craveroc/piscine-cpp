@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
+/*   By: molich <molich@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:39:59 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/26 19:00:18 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/27 06:49:32 by molich           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ ClapTrap::ClapTrap() : hp(10), ep(10), ad(0)
 ClapTrap::ClapTrap(std::string nname) : name(nname),hp(10),ep(10),ad(0)
 {
 	std::cout <<"construction de "<<name<<std::endl;
+}
+
+ClapTrap::ClapTrap(std::string nname, unsigned int hhp, unsigned int eep, unsigned int aad) : name(nname),hp(hhp),ep(eep),ad(aad)
+{
+	std::cout <<"construction claptrapienne parametrée de "<<name<<std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &tocpy)
@@ -87,3 +92,27 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout<<name<<" is repaired for"<<amount<<" points of damage he has"<<hp<<std::endl;
 }
 
+std::string ClapTrap::getname()
+{
+	return (name);
+}
+
+bool ClapTrap::checkenergy()
+{
+	if(!ep)
+	{
+		std::cout<<name<<" have no energy\n";
+		return true ;
+	}
+	return false;
+}
+
+bool ClapTrap::checkhp()
+{
+	if (!hp)
+	{
+		std::cout<<name<<" is KO\n";
+		return true;
+	}
+	return false;
+}
