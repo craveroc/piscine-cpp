@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 19:07:00 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/28 09:07:52 by ccravero         ###   ########.fr       */
+/*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
+/*   Updated: 2022/09/28 11:06:21 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-
+#include <iostream>
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
+#include "ScavTrap.hpp"
 
-class ScavTrap : public ClapTrap
+int main()
 {
-	private :
-	   
+	DiamondTrap test("truc");
 
-	public :
-		ScavTrap();
-		ScavTrap(std::string nname);
-        ScavTrap(const ScavTrap &tocpy);
-        ~ScavTrap();
-        ScavTrap &operator=(const ScavTrap &tocpy);
-
-		void guardGate();
-		void attack(const std::string& target) : ScavTrap::attack(const std::string& target);
-};
-
-
-
-#endif
+	test.attack("you");
+}

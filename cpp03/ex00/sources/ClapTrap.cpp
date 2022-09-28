@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:39:59 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/26 19:00:18 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:25:19 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ ClapTrap::ClapTrap(const ClapTrap &tocpy)
 }
 
 ClapTrap::~ClapTrap()
-{}
+{
+	std::cout<<"destruction claptrapienne de "<<name<<std::endl;
+}
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &tocpy)
 {
@@ -59,31 +61,3 @@ void ClapTrap::attack(const std::string& target)
 	std::cout<<name<<" attacks "<<target<<", causing "<<ad<<" points of damage!\n";
 	
 }
-
-void ClapTrap::takeDamage(unsigned int amount)
-{
-	
-	if (amount > hp)
-		hp = 0;
-	else
-		hp -= amount;
-	std::cout<<name<<" takes "<<amount<< " damage he has"<<hp<<std::endl;
-}
-
-void ClapTrap::beRepaired(unsigned int amount)
-{
-	if (!hp)
-	{
-		std::cout<<name<<" is KO\n";
-		return;
-	}
-	if(!ep)
-	{
-		std::cout<<name<<" have no energy\n";
-		return ;
-	}
-	ep--;
-	hp+=amount;
-	std::cout<<name<<" is repaired for"<<amount<<" points of damage he has"<<hp<<std::endl;
-}
-

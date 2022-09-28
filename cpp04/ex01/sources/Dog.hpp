@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 19:07:00 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/28 09:07:52 by ccravero         ###   ########.fr       */
+/*   Created: 2022/09/23 11:01:30 by molich            #+#    #+#             */
+/*   Updated: 2022/09/28 11:26:52 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-class ScavTrap : public ClapTrap
+# include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
+class Dog : public Animal
 {
 	private :
-	   
+		Brain *cerv;
+    public:
+        Dog();
+		Dog(std::string nname);
+        Dog(const Dog &tocpy);
+        ~Dog();
+        Dog &operator=(const Dog &tocpy);
+		void makeSound() const;
 
-	public :
-		ScavTrap();
-		ScavTrap(std::string nname);
-        ScavTrap(const ScavTrap &tocpy);
-        ~ScavTrap();
-        ScavTrap &operator=(const ScavTrap &tocpy);
-
-		void guardGate();
-		void attack(const std::string& target) : ScavTrap::attack(const std::string& target);
 };
-
-
 
 #endif

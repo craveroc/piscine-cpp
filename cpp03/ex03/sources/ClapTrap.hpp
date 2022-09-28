@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:01:30 by molich            #+#    #+#             */
-/*   Updated: 2022/09/28 09:02:09 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:03:16 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string name;
 		unsigned int hp;
 		unsigned int ep;
 		unsigned int ad;
 	
-    protected:
+    
         bool checkenergy();
 		bool checkhp();
     public:
@@ -40,6 +40,7 @@ class ClapTrap
 		void decrep();
         std::string getname();
 		unsigned int getad();
+		private:
 };
 
 #endif

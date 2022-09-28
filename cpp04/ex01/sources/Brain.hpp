@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 19:07:00 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/28 09:07:52 by ccravero         ###   ########.fr       */
+/*   Created: 2022/09/23 11:01:30 by molich            #+#    #+#             */
+/*   Updated: 2022/09/28 11:26:52 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-class ScavTrap : public ClapTrap
+# include <iostream>
+
+class Brain
 {
-	private :
-	   
+    protected:
+        std::string ideas[100];
+		
+    public:
+        Brain();
+		Brain(std::string nname);
+        Brain(const Brain &tocpy);
+        ~Brain();
+        Brain &operator=(const Brain &tocpy);
 
-	public :
-		ScavTrap();
-		ScavTrap(std::string nname);
-        ScavTrap(const ScavTrap &tocpy);
-        ~ScavTrap();
-        ScavTrap &operator=(const ScavTrap &tocpy);
-
-		void guardGate();
-		void attack(const std::string& target) : ScavTrap::attack(const std::string& target);
 };
-
-
 
 #endif

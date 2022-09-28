@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:07:02 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/28 08:59:38 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/28 08:22:38 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,4 @@ void ScavTrap::guardGate()
 
 	decrep();
     std::cout<<getname()<<" is gatekeeping\n";
-}
-
-void ScavTrap::attack(const std::string& target)
-{
-	if (checkenergy() || checkhp())
-		return;
-
-	decrep();
-	std::cout<<name<<" scavs "<<target<<", causing "<<ad<<" points of damage!\n";
 }

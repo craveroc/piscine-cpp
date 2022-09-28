@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:07:00 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/28 09:07:52 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:02:23 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	private :
 	   
@@ -28,7 +28,6 @@ class ScavTrap : public ClapTrap
         ScavTrap &operator=(const ScavTrap &tocpy);
 
 		void guardGate();
-		void attack(const std::string& target) : ScavTrap::attack(const std::string& target);
 };
 
 

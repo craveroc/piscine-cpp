@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 19:07:00 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/28 09:07:52 by ccravero         ###   ########.fr       */
+/*   Created: 2022/09/26 17:39:59 by ccravero          #+#    #+#             */
+/*   Updated: 2022/09/28 11:28:12 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include "Brain.hpp"
 
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
+Brain::Brain()
 {
-	private :
-	   
-
-	public :
-		ScavTrap();
-		ScavTrap(std::string nname);
-        ScavTrap(const ScavTrap &tocpy);
-        ~ScavTrap();
-        ScavTrap &operator=(const ScavTrap &tocpy);
-
-		void guardGate();
-		void attack(const std::string& target) : ScavTrap::attack(const std::string& target);
-};
+	std::cout<<"constructeur de brain par defaut\n";
+}
 
 
+Brain::Brain(const Brain &tocpy)
+{
+	*this = tocpy;
+	std::cout<<"construction de brain par recopie"<<std::endl;
+}
 
-#endif
+Brain::~Brain()
+{
+	std::cout<<"destruction Brainienne"<<std::endl;
+}
+
+Brain &Brain::operator=(const Brain &tocpy)
+{
+	*this.
+	return *this;
+}
