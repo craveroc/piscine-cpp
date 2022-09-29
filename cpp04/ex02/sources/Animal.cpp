@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,38 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Animal.hpp"
 
-Brain::Brain()
+Animal::Animal()
 {
-	for (int i = 0; i<100; i++)
-	{
-		ideas[i]="idee";
-	}
-	std::cout<<"constructeur de brain par defaut\n";
+	std::cout<<"constructeur par defaut\n";
 }
 
-Brain::Brain(const Brain &tocpy)
+Animal::Animal(std::string nname) : type(nname)
+{
+	std::cout <<"construction de "<<type<<std::endl;
+}
+
+Animal::Animal(const Animal &tocpy)
 {
 	*this = tocpy;
-	std::cout<<"construction de brain par recopie"<<std::endl;
+	std::cout<<"construction par recopie d'un autre"<<type<<std::endl;
 }
 
-Brain::~Brain()
+Animal::~Animal()
 {
-	std::cout<<"destruction Brainienne"<<std::endl;
+	std::cout<<"destruction Animalienne de "<<type<<std::endl;
 }
 
-Brain &Brain::operator=(const Brain &tocpy)
+Animal &Animal::operator=(const Animal &tocpy)
 {
-	for (int i = 0; i<100;i++)
-	{
-		ideas[i] = tocpy.ideas[i];
-	}
+	type = tocpy.type;
 	return *this;
 }
 
-std::string Brain::getidea(int n)
+void Animal::makeSound() const
 {
-	return ideas[n];
+	std::cout<<type<<" fait un bruit\n";
+}
+
+std::string Animal::gettype()
+{
+	return type;
 }

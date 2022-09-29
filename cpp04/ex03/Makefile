@@ -1,4 +1,4 @@
-SRCS	= main.cpp ClapTrap.cpp
+SRCS	=main.cpp Animal.cpp Brain.cpp Dog.cpp Cat.cpp
 
 DIR_SRC = sources/
 
@@ -12,7 +12,7 @@ DEP	= ${SRCS:.cpp=.d}
 
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 
-NAME	= clap
+NAME	= ani
 
 CC	= c++
 

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,24 +11,24 @@
 /* ************************************************************************** */
 
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
-class Dog : public Animal
+
+class Brain
 {
-	private :
-		Brain *cerv;
+    protected:
+        std::string ideas[100];
+		
     public:
-        Dog();
-		Dog(std::string nname);
-        Dog(const Dog &tocpy);
-        ~Dog();
-        Dog &operator=(const Dog &tocpy);
-		void makeSound() const;
+        Brain();
+		Brain(std::string nname);
+        Brain(const Brain &tocpy);
+        ~Brain();
+        Brain &operator=(const Brain &tocpy);
 		std::string getidea(int n);
+
 };
 
 #endif

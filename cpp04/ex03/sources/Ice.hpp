@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,24 +11,24 @@
 /* ************************************************************************** */
 
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
-class Dog : public Animal
+# include "AMateria.hpp"
+
+class Ice : public AMateria
 {
-	private :
-		Brain *cerv;
+    protected:
+		
     public:
-        Dog();
-		Dog(std::string nname);
-        Dog(const Dog &tocpy);
-        ~Dog();
-        Dog &operator=(const Dog &tocpy);
-		void makeSound() const;
-		std::string getidea(int n);
+        Ice();
+        Ice(const Ice &tocpy);
+        ~Ice();
+        Ice &operator=(const Ice &tocpy);
+		AMateria* clone() const;
+		void use(ICharacter& target);
+		
 };
 
 #endif

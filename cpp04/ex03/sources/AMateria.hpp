@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:01:30 by molich            #+#    #+#             */
-/*   Updated: 2022/09/28 11:26:52 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/29 09:35:58 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
-class Dog : public Animal
+
+class AMateria
 {
-	private :
-		Brain *cerv;
+    protected:
+        std::string type;
+		
     public:
-        Dog();
-		Dog(std::string nname);
-        Dog(const Dog &tocpy);
-        ~Dog();
-        Dog &operator=(const Dog &tocpy);
-		void makeSound() const;
-		std::string getidea(int n);
+        AMateria();
+		AMateria(std::string nname);
+        AMateria(const AMateria &tocpy);
+        virtual ~AMateria();
+        AMateria &operator=(const AMateria &tocpy);
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
+		std::string const & getType() const; 
 };
 
 #endif
+

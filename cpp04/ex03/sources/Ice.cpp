@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,38 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Ice.hpp"
 
-Brain::Brain()
+Ice::Ice() : AMateria("ice")
 {
-	for (int i = 0; i<100; i++)
-	{
-		ideas[i]="idee";
-	}
-	std::cout<<"constructeur de brain par defaut\n";
 }
 
-Brain::Brain(const Brain &tocpy)
+Ice::Ice(const Ice &tocpy)
 {
 	*this = tocpy;
-	std::cout<<"construction de brain par recopie"<<std::endl;
 }
 
-Brain::~Brain()
+Ice::~Ice()
 {
-	std::cout<<"destruction Brainienne"<<std::endl;
 }
 
-Brain &Brain::operator=(const Brain &tocpy)
+Ice &Ice::operator=(const Ice &tocpy)
 {
-	for (int i = 0; i<100;i++)
-	{
-		ideas[i] = tocpy.ideas[i];
-	}
+	type = tocpy.type;
 	return *this;
 }
 
-std::string Brain::getidea(int n)
+std::string Ice::getidea(int n)
 {
 	return ideas[n];
+}
+
+AMateria* clone()
+{
+	AMateria* nouv;
+
+	nouv = new Ice(*this);
+	return nouv;
+}
+
+void Cure::use(ICharacter& target)
+{
+	std::cout<<"* shoots an ice bolt at "<< target.getname()<<"*\n";
 }

@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 11:01:30 by molich            #+#    #+#             */
-/*   Updated: 2022/09/28 11:26:52 by ccravero         ###   ########.fr       */
+/*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
+/*   Updated: 2022/09/29 09:20:31 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Animal.hpp"
 
-#ifndef DOG_HPP
-# define DOG_HPP
 
-# include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
-class Dog : public Animal
+int main()
 {
-	private :
-		Brain *cerv;
-    public:
-        Dog();
-		Dog(std::string nname);
-        Dog(const Dog &tocpy);
-        ~Dog();
-        Dog &operator=(const Dog &tocpy);
-		void makeSound() const;
-		std::string getidea(int n);
-};
+	//Animal hello;
+	Animal *test[10];
+	int i;
+	for (i = 0; i<5;i++)
+		test[i]= new Cat;
+	for (i = 5; i<10; i++)
+		test[i] = new Dog;
+	for (i = 0; i<10; i++)
+	{
+		test[i]->makeSound();
+		//std::cout << test[i]->getidea(2)<<std::endl;
+		delete test[i];
+	}
+return 0;
 
-#endif
+}

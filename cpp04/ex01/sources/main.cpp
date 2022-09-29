@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/29 08:55:12 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/29 09:04:13 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,17 @@
 int main()
 {
 	Animal *test[10];
-
-	for (int i = 0; i<5;i++)
+	int i;
+	for (i = 0; i<5;i++)
 		test[i]= new Cat;
-	for (int i = 50; i<10; i++)
+	for (i = 5; i<10; i++)
 		test[i] = new Dog;
-	
-	int n;
-	std::cin>>n;
-	
-	for (int i = 0; i<10; i++)
+	for (i = 0; i<10; i++)
+	{
+		test[i]->makeSound();
+		//std::cout << test[i]->getidea(2)<<std::endl;
 		delete test[i];
-
+	}
 return 0;
 
 }
