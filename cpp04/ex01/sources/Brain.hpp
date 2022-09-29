@@ -27,6 +27,7 @@ class Brain
         Brain(const Brain &tocpy);
         ~Brain();
         Brain &operator=(const Brain &tocpy);
+		std::string getidea(int n);
 
 };
 

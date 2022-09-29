@@ -14,6 +14,7 @@
 
 Cat::Cat() : Animal("cat")
 {
+	cerv = new Brain;
 	std::cout<<"constructeur cattesque par defaut\n";
 }
 
@@ -30,6 +31,7 @@ Cat::Cat(const Cat &tocpy)
 
 Cat::~Cat()
 {
+	delete cerv;
 	std::cout<<"destruction Catienne de "<<type<<std::endl;
 }
 

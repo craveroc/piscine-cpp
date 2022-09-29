@@ -25,7 +25,7 @@ class Animal
         Animal();
 		Animal(std::string nname);
         Animal(const Animal &tocpy);
-        ~Animal();
+        virtual ~Animal();
         Animal &operator=(const Animal &tocpy);
 		virtual void makeSound() const;
 		std::string gettype();

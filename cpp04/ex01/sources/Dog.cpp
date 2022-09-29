@@ -14,6 +14,7 @@
 
 Dog::Dog() : Animal("dog")
 {
+	cerv = new Brain;
 	std::cout<<"constructeur par defaut doggesque\n";
 }
 
@@ -30,6 +31,7 @@ Dog::Dog(const Dog &tocpy)
 
 Dog::~Dog()
 {
+	delete cerv;
 	std::cout<<"destruction Dogienne de "<<type<<std::endl;
 }
 

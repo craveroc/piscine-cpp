@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/28 12:03:14 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/09/29 08:55:12 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,18 @@
 
 int main()
 {
+	Animal *test[10];
+
+	for (int i = 0; i<5;i++)
+		test[i]= new Cat;
+	for (int i = 50; i<10; i++)
+		test[i] = new Dog;
 	
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	//std::cout << j->getType() << " " << std::endl;
-	//std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	int n;
+	std::cin>>n;
+	
+	for (int i = 0; i<10; i++)
+		delete test[i];
 
 return 0;
 

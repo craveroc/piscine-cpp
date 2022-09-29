@@ -14,6 +14,10 @@
 
 Brain::Brain()
 {
+	for (int i = 0; i<100; i++)
+	{
+		ideas[i]=i;
+	}
 	std::cout<<"constructeur de brain par defaut\n";
 }
 
@@ -31,6 +35,14 @@ Brain::~Brain()
 
 Brain &Brain::operator=(const Brain &tocpy)
 {
-	*this.
+	for (int i = 0; i<100;i++)
+	{
+		ideas[i] = tocpy.ideas[i];
+	}
 	return *this;
+}
+
+std::string Brain::getidea(int n)
+{
+	return ideas[n];
 }
