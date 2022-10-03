@@ -38,6 +38,7 @@ class Form
 		int const &getranktoexec() const;
 		bool const &getsign() const;
 		void besigned(Bureaucrat const &sig);
+		virtual void exec()=0;
 
 		class GradeTooLowException : public std::exception 
 		{
