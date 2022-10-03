@@ -39,12 +39,7 @@ AMateria &AMateria::operator=(const AMateria &tocpy)
 	return *this;
 }
 
-AMateria* AMateria::clone() const
-{
-	return NULL;
-}
-
-std::string const &AMateria::getType()
+std::string const &AMateria::getType() const
 {
 	return type;
 }
@@ -54,7 +49,3 @@ void AMateria::use(ICharacter& target)
 	(void)target;
 }
 
-std::string const & AMateria::getType() const
-{
-	return type;
-}

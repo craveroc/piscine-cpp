@@ -15,9 +15,14 @@
 # define AMATERIA_HPP
 
 # include <iostream>
+# include "ICharacter.hpp"
+
+class ICharacter;
+
 
 class AMateria
 {
+	
     protected:
         std::string type;
 		
@@ -27,9 +32,9 @@ class AMateria
         AMateria(const AMateria &tocpy);
         virtual ~AMateria();
         AMateria &operator=(const AMateria &tocpy);
-		virtual AMateria* clone() const = 0;
+		virtual AMateria* clone() const =0;
 		virtual void use(ICharacter& target);
-		std::string const & getType() const; 
+		std::string const &getType() const; 
 };
 
 #endif

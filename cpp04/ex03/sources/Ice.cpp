@@ -31,20 +31,15 @@ Ice &Ice::operator=(const Ice &tocpy)
 	return *this;
 }
 
-std::string Ice::getidea(int n)
-{
-	return ideas[n];
-}
-
-AMateria* clone()
+AMateria* Ice::clone() const
 {
 	AMateria* nouv;
 
-	nouv = new Ice(*this);
+	nouv = new Ice();
 	return nouv;
 }
 
-void Cure::use(ICharacter& target)
+void Ice::use(ICharacter& target)
 {
-	std::cout<<"* shoots an ice bolt at "<< target.getname()<<"*\n";
+	std::cout<<"* shoots an ice bolt at "<< target.getName()<<"*\n";
 }

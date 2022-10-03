@@ -1,4 +1,4 @@
-SRCS	=main.cpp Animal.cpp Brain.cpp Dog.cpp Cat.cpp
+SRCS	= main.cpp  Cure.cpp Ice.cpp Character.cpp Amateria.cpp MateriaSource.cpp
 
 DIR_SRC = sources/
 
@@ -12,7 +12,7 @@ DEP	= ${SRCS:.cpp=.d}
 
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 
-NAME	= ani
+NAME	= ff
 
 CC	= c++
 

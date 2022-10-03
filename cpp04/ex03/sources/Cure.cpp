@@ -32,15 +32,15 @@ Cure &Cure::operator=(const Cure &tocpy)
 	return *this;
 }
 
-AMateria* clone()
+AMateria* Cure::clone() const
 {
 	AMateria* nouv;
 
-	nouv = new Cure(*this);
+	nouv = new Cure();
 	return nouv;
 }
 
 void Cure::use(ICharacter& target)
 {
-	std::cout<<"* heals "<< target.getname()<<"'s wounds *\n";
+	std::cout<<"* heals "<< target.getName()<<"'s wounds *\n";
 }

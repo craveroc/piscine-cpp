@@ -6,31 +6,35 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/29 09:20:31 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/10/03 11:39:47 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Animal.hpp"
 
+#include "Character.hpp"
+#include "AMateria.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
+#include "Cure.hpp"
 
 int main()
 {
-	//Animal hello;
-	Animal *test[10];
-	int i;
-	for (i = 0; i<5;i++)
-		test[i]= new Cat;
-	for (i = 5; i<10; i++)
-		test[i] = new Dog;
-	for (i = 0; i<10; i++)
-	{
-		test[i]->makeSound();
-		//std::cout << test[i]->getidea(2)<<std::endl;
-		delete test[i];
-	}
-return 0;
-
+	
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
+	return 0;
 }
