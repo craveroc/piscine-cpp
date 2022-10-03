@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,28 +11,25 @@
 /* ************************************************************************** */
 
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef ShrubberyCreationForm_HPP
+# define ShrubberyCreationForm_HPP
 
 # include <iostream>
 # include "Bureaucrat.hpp"
 # include <exception>
 class Bureaucrat;
 
-class Form
+class ShrubberyCreationForm
 {
 	
     private:
-        std::string const name;
-		const int ranktosign;
-		const int ranktoexec;
-		bool signe;
+        std::string target;
 		
     public:
-		Form(std::string nname ="Form", int gradesign = 150, int gradeexec = 150);
-        Form(const Form &tocpy);
-        virtual ~Form();
-        Form &operator=(const Form &tocpy);
+		ShrubberyCreationForm();
+        ShrubberyCreationForm(const ShrubberyCreationForm &tocpy);
+        virtual ~ShrubberyCreationForm();
+        ShrubberyCreationForm &operator=(const ShrubberyCreationForm &tocpy);
 		std::string const &getName() const;
 		int const &getranktosign() const;
 		int const &getranktoexec() const;
@@ -52,6 +49,6 @@ class Form
 };
 
 
-std::ostream &operator<<(std::ostream &out, Form Formulaire);
+std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm Formulaire);
 #endif
 

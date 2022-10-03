@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/10/03 16:49:50 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:12:51 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 int main()
 {
 	Bureaucrat bob("bob",10);
-	Form test("FormTest",12,25);
 	test.besigned(bob);
 	
 }
