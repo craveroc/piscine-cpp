@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/10/05 11:26:39 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:34:35 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,14 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	ShrubberyCreationForm form("la target");
-	//std::cout<<test<<std::endl;
-	Bureaucrat bur("Michel", 50);
-	form.besigned(bur);
-	
-//	while (1)
-	{
-	try 
-	{
-	bur.executeForm(form);
-	}
-	catch (std::exception & e)
-	{
-		std::cout<<e.what()<<std::endl;
-	}
-	}
+
+	Intern someRandomIntern;
+	Form* rrf;
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	rrf->exec();
+	delete rrf;
 }

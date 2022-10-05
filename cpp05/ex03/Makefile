@@ -1,4 +1,4 @@
-SRCS	= main.cpp Bureaucrat.cpp Form.cpp 	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS	= main.cpp Bureaucrat.cpp Form.cpp 	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 DIR_SRC = sources/
 
@@ -19,7 +19,7 @@ CC	= c++
 CFLAGS	= -MMD -Wall -Wextra -Werror -g -std=c++98
 
 $(NAME):	$(OBJS)
-			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+			$(CC) $(OBJS) -o $(NAME)
 
 all:	${NAME}
 

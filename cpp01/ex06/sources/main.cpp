@@ -32,7 +32,7 @@ int main(int argc, char **argv)
         case -1:
             std::cout<<"pas de message normal\n";
             break;
-		case 0:
+	case 0:
             std::cout<<"[DEBUG]:\n";
             test.complain(levelknown[0]);
             __attribute__((fallthrough));
