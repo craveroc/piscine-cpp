@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/10/10 18:43:25 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:56:09 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include <stdint.h>
 #include "Data.h"
 
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
+
 int main()
 {
 	uintptr_t test;

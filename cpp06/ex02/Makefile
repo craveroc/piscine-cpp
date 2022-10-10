@@ -1,4 +1,4 @@
-SRCS	= main.cpp Bureaucrat.cpp Form.cpp 	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS	= main.cpp Base.cpp
 
 DIR_SRC = sources/
 
@@ -12,7 +12,7 @@ DEP	= ${SRCS:.cpp=.d}
 
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 
-NAME	= xcept
+NAME	= tipe
 
 CC	= c++
 

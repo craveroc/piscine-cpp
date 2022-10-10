@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.h                                             :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 18:33:08 by ccravero          #+#    #+#             */
-/*   Updated: 2022/10/10 18:56:13 by ccravero         ###   ########.fr       */
+/*   Created: 2022/10/10 18:52:26 by ccravero          #+#    #+#             */
+/*   Updated: 2022/10/10 19:25:40 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_H
-# define DATA_H
+#ifndef BASE_HPP
+# define BASE_HPP
+#include <cstdlib>
 
-typedef struct s_Data
+class Base
 {
-	int	a;
-	int	b;
-}	Data;
+	public:
+	virtual ~Base();
+};
+class A : public Base{};
+class B : public Base{};
+class C : public Base{};
 
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);
 
 #endif
