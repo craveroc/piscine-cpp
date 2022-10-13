@@ -12,7 +12,7 @@ DEP	= ${SRCS:.cpp=.d}
 
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 
-NAME	= template
+NAME	= stl
 
 CC	= c++
 

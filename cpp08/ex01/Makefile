@@ -1,4 +1,4 @@
-SRCS	= main.cpp 
+SRCS	= main.cpp Span.cpp
 
 DIR_SRC = sources/
 
@@ -12,7 +12,7 @@ DEP	= ${SRCS:.cpp=.d}
 
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 
-NAME	= template
+NAME	= span
 
 CC	= c++
 

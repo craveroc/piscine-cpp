@@ -6,52 +6,55 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/10/11 12:48:07 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/10/13 10:24:40 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <sstream>
-#include <climits>
-#include "template.h"
+#include <vector>
+#include <list>
 
+template <typename T>
+int easyfind(T const &v, int const &i)
+{
+	typename T::const_iterator it=v.begin();
+	typename T::const_iterator ite=v.end();
+	while (it != ite)
+	{
+		if (*it == i)
+		{
+			std::cout << "trouve "<< std::endl;
+			return (0);
+		}
+		
+		it++;
+	}
+	return (-1);
+}
 int main()
 {
-	int a = 2;
-	int b = 3;
+	std::vector<int> v;
+	std::list<int> l;
+	int i=0;
+
 	
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-	
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-	
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-	return 0;
-		
+
+	for (i = 0; i < 10; i++)
+	{
+		v.push_back(i);
+		l.push_back(-i);
+	}
+	if (easyfind(v, 5 ) == - 1)
+		std::cout<<"rien trouve"<<std::endl;
+	if (easyfind(l, 5 ) == - 1)
+		std::cout<<"rien trouve"<<std::endl;
+	if (easyfind(v, 15) == - 1)
+		std::cout<<"rien trouve"<<std::endl;
+	if (easyfind(l,-4 ) == - 1)
+		std::cout<<"rien trouve"<<std::endl;
+	if (easyfind(v, -4) == - 1)
+		std::cout<<"rien trouve"<<std::endl;
+	std::cout<<"le resultat doit etre \ntrouve\nrien trouve\nrien trouve\ntrouve\nrien trouve"<<std::endl;
+
 }
 
-template < typename T >
-T const & max(T const &a, T const &b)
-{
-	return (a > b ? a : b);
-}
-
-template < typename T >
-T const & min(T const &a, T const &b)
-{
-	return (a < b ? a : b);
-}
-
-template < typename T >
-void swap(T &a, T &b)
-{
-	T tmp = a;
-	a = b;
-	b = tmp;
-}
