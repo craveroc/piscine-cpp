@@ -26,7 +26,7 @@ Convert::Convert(std::string bbase) : base(bbase)
 	}
 	if (base.length()== 1 && (base[0] < '0' || base[0] > '9') )
 	{
-		c = base[0];
+		c = base[0]; 
 		in = static_cast<int>(c);
 		d = static_cast<double>(c);
 		f = static_cast<float>(c);

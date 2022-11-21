@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 08:29:57 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/21 12:51:08 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:20:53 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 #include <string>
 #include <iostream>
 #include "Contact.hpp"
+#include <iomanip>
 
 void Contact::insertinfo()
 {
 	std::cout << "first name :";
 	getline(std::cin,firstname);
-	/*if (std::cin.eof()) return;
+	if (std::cin.eof()) return;
 	std::cout << "last name :";
 	getline(std::cin,lastname);
 	if (std::cin.eof()) return;
@@ -30,7 +31,7 @@ void Contact::insertinfo()
 	getline(std::cin,number);
 	if (std::cin.eof()) return;
 	std::cout << "darkest secret :";
-	getline(std::cin,secret);*/
+	getline(std::cin,secret);
 }
 
 	
@@ -48,8 +49,10 @@ void Contact::printinfo()
 
 void Contact::printshortinfo(int i)
 {
-	std::cout<<i<<"         |"<<convertshort(firstname)<<"|"<<convertshort(lastname)<<"|";
-	std::cout<<convertshort(nickname)<<std::endl;
+	std::cout <<std::setfill(' ')<< std::setw(10) ;
+	std::cout << i << "|" << std::setw(10) <<convertshort(firstname) << "|" << std::setw(10) << convertshort(lastname) << "|" <<std::setw(10)  << convertshort(nickname) << std::endl;
+	//std::cout<<i<<"         |"<<convertshort(firstname)<<"|"<<convertshort(lastname)<<"|";
+	//std::cout<<convertshort(nickname)<<std::endl;
 }
 
 std::string Contact::convertshort(std::string str)
@@ -61,10 +64,5 @@ std::string Contact::convertshort(std::string str)
 		tmp.push_back('.');
 		return (tmp);
 	}
-	tmp = str;
-	while (tmp.length() <10)
-	{
-		tmp.push_back(' ');
-	}
-	return(tmp);
+	return(str);
 }

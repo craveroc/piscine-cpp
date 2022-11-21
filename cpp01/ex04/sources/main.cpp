@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 11:20:16 by ccravero          #+#    #+#             */
-/*   Updated: 2022/09/22 14:13:37 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:34:45 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ std::string dooutstring(std::string filename, std::string s1, std::string s2)
 	std::string outstring;
 	unsigned long index;
 	outstring = getall(filename);
-	
+	if (outstring == "")
+	{
+		std::cout<<"File is empty/inexistant or protected"<<std::endl;
+		return "";
+	}
 	index = outstring.find(s1, 0);
 	while(index != std::string::npos)
 	{
