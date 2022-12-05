@@ -17,6 +17,7 @@ Convert::Convert(std::string bbase) : base(bbase)
 	std::stringstream ss;
 	ss<<bbase;
 	nondisplayable = false;
+
 	for (int j = 0; j!=4; j++)
 		impossible[j]=false;
 	if (bbase =="nan" || bbase == "nanf" || bbase == "+inf" ||bbase == "-inf" || bbase == "+inff" ||bbase == "-inff")
@@ -24,15 +25,23 @@ Convert::Convert(std::string bbase) : base(bbase)
 		nantipe(base);
 		return ; 
 	}
+	if (!validstring(bbase))
+	{
+		for (int j = 0; j!=4; j++)
+			impossible[j]=true;
+		return ;
+	}
 	if (base.length()== 1 && (base[0] < '0' || base[0] > '9') )
 	{
+		std::cout << "char" << std::endl;
 		c = base[0]; 
 		in = static_cast<int>(c);
 		d = static_cast<double>(c);
 		f = static_cast<float>(c);
 	}
-	else if (bbase.find('.') == std::string::npos)
+	else if (bbase.find ('f') == std::string::npos && bbase.find('.') == std::string::npos && base.length() < 10 &&bbase < "2147483648" && bbase > "-2147483649")
 	{
+		std::cout << "int" << std::endl;
 		ss >> in;
 		d = static_cast<double>(in);
 		f = static_cast<float>(in);
@@ -43,6 +52,7 @@ Convert::Convert(std::string bbase) : base(bbase)
 	}
 	else if (bbase.find('f') == std::string::npos)
 	{
+		std::cout << "double" << std::endl;
 		ss >> d;
 		if (std::numeric_limits<char>::max() > d && std::numeric_limits<char>::min() < d)
 			c = static_cast<double>(d) ;
@@ -59,6 +69,7 @@ Convert::Convert(std::string bbase) : base(bbase)
 	}
 	else
 	{
+		std::cout<< "float" << std::endl;
 		ss >> f;
 		if (std::numeric_limits<char>::max() > f && std::numeric_limits<char>::min() < f)
 			c = static_cast<double>(f) ;
@@ -175,13 +186,41 @@ std::ostream &operator<<(std::ostream &out, const Convert& bur)
 	if (bur.getimpossible(2))
 		out << "impossible\n";
 	else 
-		out <<std::fixed<<std::setprecision (1)<<bur.getf()<<'f'<<std::endl;
+		out <</*std::fixed<<std::setprecision (10)*/bur.getf()<<'f'<<std::endl;
 
 	out<<"Double is : ";
 	if (bur.getimpossible(3))
 		out << "impossible\n";
 	else 
-		out <<std::fixed<<std::setprecision (1)<< bur.getd()<<std::endl;
+		out <</*std::fixed<<std::setprecision (10)<<*/ bur.getd()<<std::endl;
 	
 	return out;
+}
+
+bool Convert::validstring(std::string str)
+{
+	int nbi = 0;
+
+	if (str.length() == 1)
+		return true;
+	for (unsigned long i =0; i < str.length(); i++)
+	{
+		if (str[i] == '.')
+		{
+			if (nbi == 0)
+				nbi++;
+			else
+				return false;
+		}
+		else if (str[i] == 'f')
+		{
+			if (i == str.length() -1)
+				return true;
+			else
+				return false;
+		}
+		else if (str[i] < '0' || str[i] > '9')
+			return false;
+	}
+	return true;
 }

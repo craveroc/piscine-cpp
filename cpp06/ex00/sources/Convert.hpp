@@ -44,6 +44,7 @@ class Convert
 		int geti() const;
 		bool getimpossible(int i) const;
 		void printing();
+		bool validstring(std::string str);
 
 };
 

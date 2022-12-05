@@ -6,7 +6,7 @@
 /*   By: ccravero <ccravero@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:38:54 by ccravero          #+#    #+#             */
-/*   Updated: 2022/10/10 19:32:01 by ccravero         ###   ########.fr       */
+/*   Updated: 2022/12/01 13:27:34 by ccravero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main()
 
 Base* generate(void)
 {
+	srand (time(NULL));
 	int i =rand()%3;
 	std::cout<<i<<std::endl;
 	switch (i)
